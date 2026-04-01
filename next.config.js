@@ -1,11 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  turbopack: {
-    root: "./",
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   experimental: {
     serverActions: {},
+    turbo: false, // 👈 disables Turbopack
   },
   webpack: (config) => {
     config.resolve.alias = {
@@ -16,4 +13,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
